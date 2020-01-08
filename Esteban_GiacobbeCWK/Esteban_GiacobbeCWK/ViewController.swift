@@ -51,7 +51,7 @@ class ViewController: UIViewController, subviewDelegate {
     var ballArray:[UIImageView] = []
     var birdImage:[UIImageView] = []
     
-    var score: Int = 0
+    var score = 0
     
     var dynamicAnimator: UIDynamicAnimator!
     var dynamicItemBehavior: UIDynamicItemBehavior!
@@ -91,8 +91,16 @@ class ViewController: UIViewController, subviewDelegate {
     }
     
     
+    @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var Score: UILabel!
     @IBOutlet weak var ballImageView: DragImageView!
     //@IBOutlet weak var ballView: DragImageView!
+    
+    //func updateScore(){
+    //   Score.text = String(score)
+        
+    //}
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,13 +125,14 @@ class ViewController: UIViewController, subviewDelegate {
             for createBall in self.ballArray{
                 for bird in self.birdImage {
                     if createBall.frame.intersects(bird.frame){
-                        let before = self.view.subviews.count
+                        //let before = self.view.subviews.count
                         bird.removeFromSuperview()
-                        let after = self.view.subviews.count
+                        //let after = self.view.subviews.count
                         
-                        if(before != after){
-                            self.score += 1
-                        }
+                        //(before != after){
+                        self.score += 1
+                        //self.updateScore()
+                        //}
                     }
                     
                 }
