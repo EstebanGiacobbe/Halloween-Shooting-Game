@@ -36,6 +36,7 @@ class ViewController: UIViewController, subviewDelegate {
     
     var dynamicAnimator: UIDynamicAnimator!
     var dynamicItemBehavior: UIDynamicItemBehavior!
+    var boundaryCollisionBehavior: UICollisionBehavior!
     
     
     
@@ -57,6 +58,11 @@ class ViewController: UIViewController, subviewDelegate {
         
         dynamicItemBehavior.addItem(createBall)
         dynamicItemBehavior.addLinearVelocity(CGPoint(x: angleX * 2, y: angleY * 2), for: createBall)
+        
+        boundaryCollisionBehavior.addItem(createBall)
+        dynamicAnimator.addBehavior(boundaryCollisionBehavior)
+        
+        
            
         
     }
@@ -71,6 +77,13 @@ class ViewController: UIViewController, subviewDelegate {
         
         ballImageView.myDelegate = self
         
+        boundaryCollisionBehavior = UICollisionBehavior(items: ballArray)
+        
+        boundaryCollisionBehavior.addBoundary(withIdentifier: "Top_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 0.0), to: CGPoint (x: self.W * 1.0, y: self.H * 0.0))
+        
+        boundaryCollisionBehavior.addBoundary(withIdentifier: "Left_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 0.0), to: CGPoint (x: self.W * 0.0, y: self.H * 1.0))
+        
+        boundaryCollisionBehavior.addBoundary(withIdentifier: "Bottom_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 1.0), to: CGPoint (x: self.W * 1.0, y: self.H * 1.0))
         
     }
 
