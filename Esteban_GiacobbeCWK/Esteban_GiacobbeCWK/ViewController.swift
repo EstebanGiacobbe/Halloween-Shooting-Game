@@ -33,11 +33,47 @@ class ViewController: UIViewController, subviewDelegate {
         
         let birds = UIImageView(image: nil)
         birds.image = UIImage (named: birdsImages.randomElement()!)
-        birds.frame = CGRect(x: W * 0.9, y: H * 0.5, width: W * 0.10, height: H * 0.17)
+        //birds.image = UIImage (named: "bird13.png")
+        birds.frame = CGRect(x: W * 0.9, y: H * 0.02, width: W * 0.10, height: H * 0.15)
+        
+        let birds1 = UIImageView(image: nil)
+        birds1.image = UIImage (named: birdsImages.randomElement()!)
+        birds1.frame = CGRect(x: W * 0.9, y: H * 0.2, width: W * 0.10, height: H * 0.15)
+        
+        
+        let birds2 = UIImageView(image: nil)
+        birds2.image = UIImage (named: birdsImages.randomElement()!)
+        birds2.frame = CGRect(x: W * 0.9, y: H * 0.4, width: W * 0.10, height: H * 0.15)
+        
+        let birds3 = UIImageView(image: nil)
+        birds3.image = UIImage (named: birdsImages.randomElement()!)
+        birds3.frame = CGRect(x: W * 0.9, y: H * 0.6, width: W * 0.10, height: H * 0.15)
+        
+        
+        let birds4 = UIImageView(image: nil)
+        birds4.image = UIImage (named: birdsImages.randomElement()!)
+        birds4.frame = CGRect(x: W * 0.9, y: H * 0.8, width: W * 0.10, height: H * 0.15)
         
         birdImage.append(birds)
         self.view.addSubview(birds)
         self.view.bringSubviewToFront(birds)
+        
+        birdImage.append(birds1)
+        self.view.addSubview(birds1)
+        self.view.bringSubviewToFront(birds1)
+        
+        birdImage.append(birds2)
+        self.view.addSubview(birds2)
+        self.view.bringSubviewToFront(birds2)
+        
+        birdImage.append(birds3)
+        self.view.addSubview(birds3)
+        self.view.bringSubviewToFront(birds3)
+        
+        birdImage.append(birds4)
+        self.view.addSubview(birds4)
+        self.view.bringSubviewToFront(birds4)
+        
         
         birdsCollisionBehavior = UICollisionBehavior(items: birdImage)
         
@@ -75,7 +111,7 @@ class ViewController: UIViewController, subviewDelegate {
         
         createBall.image = UIImage(named: "ball.png")
         
-        createBall.frame = CGRect(x:W * 0.10, y:H * 0.5, width : W * 0.10, height : H * 0.17)
+        createBall.frame = CGRect(x:W * 0.10, y:H * 0.5, width : W * 0.07, height : H * 0.07)
         
         self.view.addSubview(createBall)
         self.view.bringSubviewToFront(createBall)
