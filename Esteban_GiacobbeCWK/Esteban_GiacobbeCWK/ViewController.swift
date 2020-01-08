@@ -29,8 +29,10 @@ class ViewController: UIViewController, subviewDelegate {
     
     func birds() {
         
+        let birdsImages = ["bird13.png","bird6.png","bird12.png"]
+        
         let birds = UIImageView(image: nil)
-        birds.image = UIImage (named: "bird12.png")
+        birds.image = UIImage (named: birdsImages.randomElement()!)
         birds.frame = CGRect(x: W * 0.9, y: H * 0.5, width: W * 0.10, height: H * 0.17)
         
         birdImage.append(birds)
@@ -38,6 +40,8 @@ class ViewController: UIViewController, subviewDelegate {
         self.view.bringSubviewToFront(birds)
         
         birdsCollisionBehavior = UICollisionBehavior(items: birdImage)
+        
+        //
         
     }
     
@@ -88,22 +92,14 @@ class ViewController: UIViewController, subviewDelegate {
         dynamicAnimator.addBehavior(boundaryCollisionBehavior)
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
-        
-        
-        
-           
-        
+        //
+  
     }
     
     
     
     @IBOutlet weak var ballImageView: DragImageView!
-    //@IBOutlet weak var ballView: DragImageView!
     
-    //func updateScore(){
-    //   Score.text = String(score)
-        
-    //}
     
     
     override func viewDidLoad() {
@@ -132,7 +128,7 @@ class ViewController: UIViewController, subviewDelegate {
             for createBall in self.ballArray{
                 for bird in self.birdImage {
                     if createBall.frame.intersects(bird.frame){
-                        
+               
                         let before = self.view.subviews.count
                         bird.removeFromSuperview()
                         let after = self.view.subviews.count
@@ -143,11 +139,9 @@ class ViewController: UIViewController, subviewDelegate {
                         }
                     }
                 }
-            }
+           }
         }
-        
-        
-        
+     
     }
 
 

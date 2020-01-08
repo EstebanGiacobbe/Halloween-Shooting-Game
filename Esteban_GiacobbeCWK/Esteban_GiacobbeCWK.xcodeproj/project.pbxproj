@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281F69D123C6971D0084F1AA /* bird6.png in Resources */ = {isa = PBXBuildFile; fileRef = 281F69D023C6971D0084F1AA /* bird6.png */; };
+		281F69D323C6972B0084F1AA /* bird13.png in Resources */ = {isa = PBXBuildFile; fileRef = 281F69D223C6972B0084F1AA /* bird13.png */; };
 		2856B7C223C53688007C1C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B7C123C53688007C1C95 /* AppDelegate.swift */; };
 		2856B7C423C53688007C1C95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B7C323C53688007C1C95 /* SceneDelegate.swift */; };
 		2856B7C623C53688007C1C95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B7C523C53688007C1C95 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		281F69D023C6971D0084F1AA /* bird6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird6.png; sourceTree = "<group>"; };
+		281F69D223C6972B0084F1AA /* bird13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird13.png; sourceTree = "<group>"; };
 		2856B7BE23C53688007C1C95 /* Esteban_GiacobbeCWK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Esteban_GiacobbeCWK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2856B7C123C53688007C1C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2856B7C323C53688007C1C95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				2856B7C123C53688007C1C95 /* AppDelegate.swift */,
 				2856B7C323C53688007C1C95 /* SceneDelegate.swift */,
 				2856B7C523C53688007C1C95 /* ViewController.swift */,
+				281F69D223C6972B0084F1AA /* bird13.png */,
+				281F69D023C6971D0084F1AA /* bird6.png */,
 				289F55A723C62C550051F661 /* bird12.png */,
 				2856B7F523C56D02007C1C95 /* ball.png */,
 				2856B7F123C5411E007C1C95 /* DragImageView.swift */,
@@ -246,7 +252,9 @@
 			files = (
 				2856B7CE23C53689007C1C95 /* LaunchScreen.storyboard in Resources */,
 				289F55A823C62C550051F661 /* bird12.png in Resources */,
+				281F69D323C6972B0084F1AA /* bird13.png in Resources */,
 				2856B7F623C56D02007C1C95 /* ball.png in Resources */,
+				281F69D123C6971D0084F1AA /* bird6.png in Resources */,
 				2856B7F423C54497007C1C95 /* aim.png in Resources */,
 				2856B7CB23C53689007C1C95 /* Assets.xcassets in Resources */,
 				2856B7C923C53688007C1C95 /* Main.storyboard in Resources */,
