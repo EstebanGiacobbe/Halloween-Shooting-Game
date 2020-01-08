@@ -45,6 +45,8 @@ class DragImageView: UIImageView {
         
         
         self.center = newCenter
+        
+        self.myDelegate?.aimLocation(dx: dx * 10, dy: dy * 10, center: self.center)
 }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
