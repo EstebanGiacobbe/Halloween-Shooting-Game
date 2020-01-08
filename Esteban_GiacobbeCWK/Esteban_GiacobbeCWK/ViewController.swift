@@ -32,6 +32,8 @@ class ViewController: UIViewController, subviewDelegate {
         self.view.addSubview(birds)
         self.view.bringSubviewToFront(birds)
         
+        birdsCollisionBehavior = UICollisionBehavior(items: birdImage)
+        
     }
     
     
@@ -49,9 +51,12 @@ class ViewController: UIViewController, subviewDelegate {
     var ballArray:[UIImageView] = []
     var birdImage:[UIImageView] = []
     
+    var score: Int = 0
+    
     var dynamicAnimator: UIDynamicAnimator!
     var dynamicItemBehavior: UIDynamicItemBehavior!
     var boundaryCollisionBehavior: UICollisionBehavior!
+    var birdsCollisionBehavior: UICollisionBehavior!
     
     
     
@@ -77,6 +82,9 @@ class ViewController: UIViewController, subviewDelegate {
         boundaryCollisionBehavior.addItem(createBall)
         dynamicAnimator.addBehavior(boundaryCollisionBehavior)
         
+        dynamicAnimator.addBehavior(birdsCollisionBehavior)
+        
+        
         
            
         
@@ -101,6 +109,31 @@ class ViewController: UIViewController, subviewDelegate {
         boundaryCollisionBehavior.addBoundary(withIdentifier: "Left_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 0.0), to: CGPoint (x: self.W * 0.0, y: self.H * 1.0))
         
         boundaryCollisionBehavior.addBoundary(withIdentifier: "Bottom_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 1.0), to: CGPoint (x: self.W * 1.0, y: self.H * 1.0))
+        
+        birdsCollisionBehavior = UICollisionBehavior(items:[])
+        
+        //bird collision
+        birdsCollisionBehavior.action = {
+            for createBall in self.ballArray{
+                for bird in self.birdImage {
+                    if createBall.frame.intersects(bird.frame){
+                        let before = self.view.subviews.count
+                        bird.removeFromSuperview()
+                        let after = self.view.subviews.count
+                        
+                        if(before != after){
+                            self.score += 1
+                        }
+                    }
+                    
+                }
+                
+            }
+            
+            
+            
+            
+        }
         
     }
 
