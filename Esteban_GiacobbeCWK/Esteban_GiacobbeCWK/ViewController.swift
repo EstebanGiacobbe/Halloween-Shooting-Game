@@ -12,6 +12,8 @@ protocol subviewDelegate{
     func createBall()
     func aimLocation(dx: CGFloat, dy: CGFloat, center: CGPoint)
     
+    func birds()
+    
 }
 
 var angleX: CGFloat!
@@ -20,6 +22,18 @@ var pointRelease: CGPoint!
 
 
 class ViewController: UIViewController, subviewDelegate {
+    func birds() {
+        
+        let birds = UIImageView(image: nil)
+        birds.image = UIImage (named: "bird12.png")
+        birds.frame = CGRect(x: W * 0.9, y: H * 0.5, width: W * 0.10, height: H * 0.17)
+        
+        birdImage.append(birds)
+        self.view.addSubview(birds)
+        self.view.bringSubviewToFront(birds)
+        
+    }
+    
     
     func aimLocation(dx:CGFloat, dy: CGFloat, center: CGPoint){
         
@@ -33,6 +47,7 @@ class ViewController: UIViewController, subviewDelegate {
     let H = UIScreen.main.bounds.height
     
     var ballArray:[UIImageView] = []
+    var birdImage:[UIImageView] = []
     
     var dynamicAnimator: UIDynamicAnimator!
     var dynamicItemBehavior: UIDynamicItemBehavior!
@@ -74,6 +89,8 @@ class ViewController: UIViewController, subviewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        birds()
         
         ballImageView.myDelegate = self
         
