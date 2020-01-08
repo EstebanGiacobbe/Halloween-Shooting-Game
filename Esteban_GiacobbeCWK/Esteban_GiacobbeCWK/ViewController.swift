@@ -22,6 +22,11 @@ var pointRelease: CGPoint!
 
 
 class ViewController: UIViewController, subviewDelegate {
+    
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    var score = 0
+    
     func birds() {
         
         let birds = UIImageView(image: nil)
@@ -51,7 +56,7 @@ class ViewController: UIViewController, subviewDelegate {
     var ballArray:[UIImageView] = []
     var birdImage:[UIImageView] = []
     
-    var score = 0
+    
     
     var dynamicAnimator: UIDynamicAnimator!
     var dynamicItemBehavior: UIDynamicItemBehavior!
@@ -91,8 +96,7 @@ class ViewController: UIViewController, subviewDelegate {
     }
     
     
-    @IBOutlet weak var display: UILabel!
-    @IBOutlet weak var Score: UILabel!
+    
     @IBOutlet weak var ballImageView: DragImageView!
     //@IBOutlet weak var ballView: DragImageView!
     
@@ -105,6 +109,9 @@ class ViewController: UIViewController, subviewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        score = 0
+        scoreLabel.text = String(score)
         
         birds()
         
@@ -125,24 +132,21 @@ class ViewController: UIViewController, subviewDelegate {
             for createBall in self.ballArray{
                 for bird in self.birdImage {
                     if createBall.frame.intersects(bird.frame){
-                        //let before = self.view.subviews.count
-                        bird.removeFromSuperview()
-                        //let after = self.view.subviews.count
                         
-                        //(before != after){
+                        let before = self.view.subviews.count
+                        bird.removeFromSuperview()
+                        let after = self.view.subviews.count
+
+                        if before != after{
                         self.score += 1
-                        //self.updateScore()
-                        //}
+                        self.scoreLabel.text = String(self.score)
+                        }
                     }
-                    
                 }
-                
             }
-            
-            
-            
-            
         }
+        
+        
         
     }
 
