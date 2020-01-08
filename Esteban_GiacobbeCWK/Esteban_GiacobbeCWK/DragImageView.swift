@@ -40,8 +40,8 @@ class DragImageView: UIImageView {
         newCenter.x = min(W * 0.15 - halfx, newCenter.x)
         
         let halfy = self.bounds.midY
-        newCenter.y = max(H / 2 - W * 0.15 / 2 + halfx, newCenter.y)
-        newCenter.y = min(H / 2 + W * 0.15 / 2 - halfx, newCenter.y)
+        newCenter.y = max(H / 2 - W * 0.15 / 2 + halfy, newCenter.y)
+        newCenter.y = min(H / 2 + W * 0.15 / 2 - halfy, newCenter.y)
         
         
         self.center = newCenter
@@ -51,8 +51,7 @@ class DragImageView: UIImageView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        self.center.x = W * 0.05
-        self.center.y = H * 0.5
+        self.center = CGPoint(x: W * 0.05, y: H * 0.5)
         
         self.myDelegate?.createBall()
         
