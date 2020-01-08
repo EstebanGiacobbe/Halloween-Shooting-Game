@@ -18,26 +18,27 @@ class ViewController: UIViewController, subviewDelegate {
     
     func createBall() {
         
-        var ballImageView = UIImageview(image: nil)
+        let createBall = UIImageView(image: nil)
         
-        ballImageView.image = UIImage(named: "ball.png")
+        createBall.image = UIImage(named: "ball.png")
         
-        ballImageView.frame = CGRect(x:100, y:100, width : 30, height : 50)
+        createBall.frame = CGRect(x:100, y:100, width : 30, height : 50)
         
-        self.view.addSubview(ballImageView)
+        self.view.addSubview(createBall)
         
         
         
     }
     
     
+    @IBOutlet weak var ballImageView: DragImageView!
     //@IBOutlet weak var ballView: DragImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //ballImageView.myDelegate = self
+        ballImageView.myDelegate = self
         
         
     }
