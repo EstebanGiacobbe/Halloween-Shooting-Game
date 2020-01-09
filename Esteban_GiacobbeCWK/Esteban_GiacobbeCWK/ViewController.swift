@@ -31,10 +31,12 @@ class ViewController: UIViewController, subviewDelegate {
         
         let birdsImages = ["bird1.png","bird3.png","bird4.png","bird5.png","bird6.png","bird7.png","bird8.png","bird9.png","bird10.png","bird11.png","bird13.png","bird12.png"]
         
+        
         let birds = UIImageView(image: nil)
         birds.image = UIImage (named: birdsImages.randomElement()!)
         //birds.image = UIImage (named: "bird13.png")
         birds.frame = CGRect(x: W * 0.9, y: H * 0.02, width: W * 0.10, height: H * 0.15)
+            
         
         let birds1 = UIImageView(image: nil)
         birds1.image = UIImage (named: birdsImages.randomElement()!)
