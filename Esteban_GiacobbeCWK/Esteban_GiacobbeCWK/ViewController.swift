@@ -12,7 +12,6 @@ protocol subviewDelegate{
     func createBall()
     func aimLocation(dx: CGFloat, dy: CGFloat, center: CGPoint)
     
-    func birds()
     
 }
 
@@ -32,49 +31,67 @@ class ViewController: UIViewController, subviewDelegate {
         let birdsImages = ["bird1.png","bird3.png","bird4.png","bird5.png","bird6.png","bird7.png","bird8.png","bird9.png","bird10.png","bird11.png","bird13.png","bird12.png"]
         
         
+        
+            
+        Timer.scheduledTimer(withTimeInterval: 1, repeats:true){ timer in
+            
+        let index = Int.random(in: 0 ... 3)
+            if !self.birdrepeat.contains(self.birdImage[index]){
+                self.birdrepeat.append(self.birdImage[index])
+                self.view.addSubview(self.birdImage[index])
+            }
+            
+            
+            
+        
+        }
+        
+       
+        
+        
         let birds = UIImageView(image: nil)
         birds.image = UIImage (named: birdsImages.randomElement()!)
         //birds.image = UIImage (named: "bird13.png")
-        birds.frame = CGRect(x: W * 0.9, y: H * 0.02, width: W * 0.10, height: H * 0.15)
+        birds.frame = CGRect(x: self.W * 0.9, y: self.H * 0.02, width: 50, height: 50)
             
+        birdImage.append(birds)        //self.view.addSubview(birds)
+        //self.view.bringSubviewToFront(birds)
         
         let birds1 = UIImageView(image: nil)
         birds1.image = UIImage (named: birdsImages.randomElement()!)
-        birds1.frame = CGRect(x: W * 0.9, y: H * 0.2, width: W * 0.10, height: H * 0.15)
+        birds1.frame = CGRect(x: self.W * 0.9, y: self.H * 0.2, width: 50, height: 50)
         
         
         let birds2 = UIImageView(image: nil)
         birds2.image = UIImage (named: birdsImages.randomElement()!)
-        birds2.frame = CGRect(x: W * 0.9, y: H * 0.4, width: W * 0.10, height: H * 0.15)
+        birds2.frame = CGRect(x: self.W * 0.9, y: self.H * 0.4, width: 50, height: 50)
         
         let birds3 = UIImageView(image: nil)
         birds3.image = UIImage (named: birdsImages.randomElement()!)
-        birds3.frame = CGRect(x: W * 0.9, y: H * 0.6, width: W * 0.10, height: H * 0.15)
+        birds3.frame = CGRect(x: self.W * 0.9, y: self.H * 0.6, width: 50, height: 50)
         
         
         let birds4 = UIImageView(image: nil)
         birds4.image = UIImage (named: birdsImages.randomElement()!)
-        birds4.frame = CGRect(x: W * 0.9, y: H * 0.8, width: W * 0.10, height: H * 0.15)
+        birds4.frame = CGRect(x: self.W * 0.9, y: self.H * 0.8, width: 50, height: 50)
         
-        birdImage.append(birds)
-        self.view.addSubview(birds)
-        self.view.bringSubviewToFront(birds)
         
-        birdImage.append(birds1)
-        self.view.addSubview(birds1)
-        self.view.bringSubviewToFront(birds1)
+        
+       birdImage.append(birds1)
+        //self.view.addSubview(birds1)
+        //self.view.bringSubviewToFront(birds1)
         
         birdImage.append(birds2)
-        self.view.addSubview(birds2)
-        self.view.bringSubviewToFront(birds2)
+        //self.view.addSubview(birds2)
+        //self.view.bringSubviewToFront(birds2)
         
         birdImage.append(birds3)
-        self.view.addSubview(birds3)
-        self.view.bringSubviewToFront(birds3)
+        //self.view.addSubview(birds3)
+        //self.view.bringSubviewToFront(birds3)
         
         birdImage.append(birds4)
-        self.view.addSubview(birds4)
-        self.view.bringSubviewToFront(birds4)
+        //self.view.addSubview(birds4)
+        //self.view.bringSubviewToFront(birds4)
         
         
         birdsCollisionBehavior = UICollisionBehavior(items: birdImage)
@@ -97,6 +114,7 @@ class ViewController: UIViewController, subviewDelegate {
     
     var ballArray:[UIImageView] = []
     var birdImage:[UIImageView] = []
+    var birdrepeat:[UIImageView] = []
     
     
     
@@ -148,7 +166,9 @@ class ViewController: UIViewController, subviewDelegate {
         score = 0
         scoreLabel.text = String(score)
         
+        
         birds()
+        
         
         ballImageView.myDelegate = self
         
@@ -174,9 +194,13 @@ class ViewController: UIViewController, subviewDelegate {
         //bird collision
         birdsCollisionBehavior.action = {
             for createBall in self.ballArray{
-                for bird in self.birdImage {
+                for bird in self.birdrepeat {
                     if createBall.frame.intersects(bird.frame){
-               
+                        
+                        let index = self.birdrepeat.firstIndex(of: bird)
+                        self.birdrepeat.remove(at: index!)
+                        
+                        
                         let before = self.view.subviews.count
                         bird.removeFromSuperview()
                         let after = self.view.subviews.count
