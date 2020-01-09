@@ -119,20 +119,21 @@ class ViewController: UIViewController, subviewDelegate {
         self.view.bringSubviewToFront(createBall)
         self.ballArray.append(createBall)
         
-        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+        
         dynamicItemBehavior = UIDynamicItemBehavior(items: ballArray)
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
-        dynamicItemBehavior.addItem(createBall)
-        dynamicItemBehavior.addLinearVelocity(CGPoint(x: angleX * 2, y: angleY * 2), for: createBall)
+        //dynamicItemBehavior.addItem(createBall)
+        self.dynamicItemBehavior.addLinearVelocity(CGPoint(x: angleX, y: angleY), for: createBall)
         
         boundaryCollisionBehavior.addItem(createBall)
         dynamicAnimator.addBehavior(boundaryCollisionBehavior)
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
-        //
   
     }
+    
+
     
     
     
@@ -143,7 +144,9 @@ class ViewController: UIViewController, subviewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        
+        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+        
         score = 0
         scoreLabel.text = String(score)
         
@@ -179,6 +182,10 @@ class ViewController: UIViewController, subviewDelegate {
                 }
            }
         }
+        
+        
+        
+        
      
     }
 
