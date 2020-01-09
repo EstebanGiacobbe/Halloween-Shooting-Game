@@ -47,7 +47,7 @@ class ViewController: UIViewController, subviewDelegate {
     
     func birds() {
         
-        let birdsImages = ["bird1.png","bird3.png","bird4.png","bird5.png","bird6.png","bird7.png","bird8.png","bird9.png","bird10.png","bird11.png","bird13.png","bird12.png"]
+        let birdsImages = ["Golem.png","Golem1.png","Golem3.png","Golem4.png"]
         
         
         
@@ -65,28 +65,24 @@ class ViewController: UIViewController, subviewDelegate {
         let birds = UIImageView(image: nil)
         birds.image = UIImage (named: birdsImages.randomElement()!)
         //birds.image = UIImage (named: "bird13.png")
-        birds.frame = CGRect(x: self.W * 0.9, y: self.H * 0.02, width: 50, height: 50)
+        birds.frame = CGRect(x: self.W * 0.9, y: self.H * 0.02, width: 80, height: 80)
             
         birdImage.append(birds)        //self.view.addSubview(birds)
         //self.view.bringSubviewToFront(birds)
         
         let birds1 = UIImageView(image: nil)
         birds1.image = UIImage (named: birdsImages.randomElement()!)
-        birds1.frame = CGRect(x: self.W * 0.9, y: self.H * 0.2, width: 50, height: 50)
+        birds1.frame = CGRect(x: self.W * 0.9, y: self.H * 0.3, width: 80, height: 80)
         
         
         let birds2 = UIImageView(image: nil)
         birds2.image = UIImage (named: birdsImages.randomElement()!)
-        birds2.frame = CGRect(x: self.W * 0.9, y: self.H * 0.4, width: 50, height: 50)
+        birds2.frame = CGRect(x: self.W * 0.9, y: self.H * 0.5, width: 80, height: 80)
         
         let birds3 = UIImageView(image: nil)
         birds3.image = UIImage (named: birdsImages.randomElement()!)
-        birds3.frame = CGRect(x: self.W * 0.9, y: self.H * 0.6, width: 50, height: 50)
+        birds3.frame = CGRect(x: self.W * 0.9, y: self.H * 0.8, width: 80, height: 80)
         
-        
-        let birds4 = UIImageView(image: nil)
-        birds4.image = UIImage (named: birdsImages.randomElement()!)
-        birds4.frame = CGRect(x: self.W * 0.9, y: self.H * 0.8, width: 50, height: 50)
         
         
         
@@ -101,10 +97,6 @@ class ViewController: UIViewController, subviewDelegate {
         birdImage.append(birds3)
         //self.view.addSubview(birds3)
         //self.view.bringSubviewToFront(birds3)
-        
-        birdImage.append(birds4)
-        //self.view.addSubview(birds4)
-        //self.view.bringSubviewToFront(birds4)
         
         
         birdsCollisionBehavior = UICollisionBehavior(items: birdImage)
@@ -126,7 +118,7 @@ class ViewController: UIViewController, subviewDelegate {
         
         let createBall = UIImageView(image: nil)
         
-        createBall.image = UIImage(named: "ball.png")
+        createBall.image = UIImage(named: "PumpkinPNG.png")
         
         createBall.frame = CGRect(x:W * 0.10, y:H * 0.5, width : 30, height : 30)
         
@@ -152,6 +144,12 @@ class ViewController: UIViewController, subviewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        var background = UIImageView(image: UIImage(named: "Background.png"))
+        background.frame = UIScreen.main.bounds
+        self.view.addSubview(background)
+        self.view.sendSubviewToBack(background)
+        
         
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         
