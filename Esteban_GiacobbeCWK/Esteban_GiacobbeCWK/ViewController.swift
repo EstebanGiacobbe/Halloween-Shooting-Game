@@ -113,12 +113,11 @@ class ViewController: UIViewController, subviewDelegate {
         
         createBall.image = UIImage(named: "ball.png")
         
-        createBall.frame = CGRect(x:W * 0.10, y:H * 0.5, width : W * 0.07, height : H * 0.07)
+        createBall.frame = CGRect(x:W * 0.10, y:H * 0.5, width : 30, height : 30)
         
         self.view.addSubview(createBall)
         self.view.bringSubviewToFront(createBall)
         self.ballArray.append(createBall)
-        
         
         dynamicItemBehavior = UIDynamicItemBehavior(items: ballArray)
         dynamicAnimator.addBehavior(dynamicItemBehavior)
@@ -130,10 +129,9 @@ class ViewController: UIViewController, subviewDelegate {
         dynamicAnimator.addBehavior(boundaryCollisionBehavior)
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
-  
     }
     
-
+    
     
     
     
@@ -153,6 +151,15 @@ class ViewController: UIViewController, subviewDelegate {
         birds()
         
         ballImageView.myDelegate = self
+        
+        
+        
+        collision()
+        
+    }
+    
+    
+    func collision() {
         
         boundaryCollisionBehavior = UICollisionBehavior(items: ballArray)
         
@@ -185,10 +192,7 @@ class ViewController: UIViewController, subviewDelegate {
         
         
         
-        
-     
     }
-
 
 }
 
