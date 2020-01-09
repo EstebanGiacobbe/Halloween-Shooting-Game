@@ -26,6 +26,21 @@ class ViewController: UIViewController, subviewDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     var score = 0
     
+    let W = UIScreen.main.bounds.width
+    let H = UIScreen.main.bounds.height
+    
+    var ballArray:[UIImageView] = []
+    var birdImage:[UIImageView] = []
+    var birdrepeat:[UIImageView] = []
+    
+    
+    
+    var dynamicAnimator: UIDynamicAnimator!
+    var dynamicItemBehavior: UIDynamicItemBehavior!
+    var boundaryCollisionBehavior: UICollisionBehavior!
+    var birdsCollisionBehavior: UICollisionBehavior!
+    
+    
     func birds() {
         
         let birdsImages = ["bird1.png","bird3.png","bird4.png","bird5.png","bird6.png","bird7.png","bird8.png","bird9.png","bird10.png","bird11.png","bird13.png","bird12.png"]
@@ -41,14 +56,8 @@ class ViewController: UIViewController, subviewDelegate {
                 self.view.addSubview(self.birdImage[index])
             }
             
-            
-            
-        
         }
-        
-       
-        
-        
+
         let birds = UIImageView(image: nil)
         birds.image = UIImage (named: birdsImages.randomElement()!)
         //birds.image = UIImage (named: "bird13.png")
@@ -99,8 +108,7 @@ class ViewController: UIViewController, subviewDelegate {
         //
         
     }
-    
-    
+
     func aimLocation(dx:CGFloat, dy: CGFloat, center: CGPoint){
         
         angleX = dx
@@ -108,22 +116,7 @@ class ViewController: UIViewController, subviewDelegate {
         pointRelease = center
         
     }
-    
-    let W = UIScreen.main.bounds.width
-    let H = UIScreen.main.bounds.height
-    
-    var ballArray:[UIImageView] = []
-    var birdImage:[UIImageView] = []
-    var birdrepeat:[UIImageView] = []
-    
-    
-    
-    var dynamicAnimator: UIDynamicAnimator!
-    var dynamicItemBehavior: UIDynamicItemBehavior!
-    var boundaryCollisionBehavior: UICollisionBehavior!
-    var birdsCollisionBehavior: UICollisionBehavior!
-    
-    
+
     
     func createBall() {
         
@@ -148,15 +141,10 @@ class ViewController: UIViewController, subviewDelegate {
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
     }
-    
-    
-    
-    
-    
+
     @IBOutlet weak var ballImageView: DragImageView!
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -166,15 +154,18 @@ class ViewController: UIViewController, subviewDelegate {
         score = 0
         scoreLabel.text = String(score)
         
-        
         birds()
         
-        
         ballImageView.myDelegate = self
-        
-        
-        
+
         collision()
+        
+        //let end = DispatchTime.now() + 20
+        //DispatchQueue.main.asyncAfter(deadline: end){
+            
+            
+            
+        //}
         
     }
     
@@ -213,9 +204,7 @@ class ViewController: UIViewController, subviewDelegate {
                 }
            }
         }
-        
-        
-        
+  
     }
 
 }

@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aim.png" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-MO-MNl" customClass="DragImageView" customModule="Esteban_GiacobbeCWK" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aim" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-MO-MNl" customClass="DragImageView" customModule="Esteban_GiacobbeCWK" customModuleProvider="target">
                                 <rect key="frame" x="20" y="150" width="60" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -55,6 +55,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aim.png" width="256" height="256"/>
+        <image name="aim" width="256" height="256"/>
     </resources>
 </document>
