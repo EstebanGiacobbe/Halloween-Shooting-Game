@@ -23,6 +23,7 @@ var pointRelease: CGPoint!
 class ViewController: UIViewController, subviewDelegate {
     
     
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     var score = 0
     
@@ -32,6 +33,9 @@ class ViewController: UIViewController, subviewDelegate {
     var ballArray:[UIImageView] = []
     var birdImage:[UIImageView] = []
     var birdrepeat:[UIImageView] = []
+    
+    var gameTime = 20
+    var gameTimer = Timer()
     
     
     
@@ -160,17 +164,14 @@ class ViewController: UIViewController, subviewDelegate {
 
         collision()
         
-        //let end = DispatchTime.now() + 20
-        //DispatchQueue.main.asyncAfter(deadline: end){
-            
-            
-            
-        //}
+        gameTime = 20
+        
+       gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.finishGameTimer), userInfo: nil, repeats: true)
+        
         
     }
-    
-    
-    func collision() {
+        
+        func collision() {
         
         boundaryCollisionBehavior = UICollisionBehavior(items: ballArray)
         
@@ -204,7 +205,29 @@ class ViewController: UIViewController, subviewDelegate {
                 }
            }
         }
-  
+    }
+    
+    @objc func finishGameTimer(){
+        
+        gameTime -= 1
+        timeLabel.text = String(gameTime)
+        
+        if gameTime == 0{
+            
+            gameTimer.invalidate()
+            
+            Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.end), userInfo: nil, repeats: false)
+        }
+        
+    }
+    
+    @objc func end (){
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! endViewController
+        
+        self.present(vc, animated: false, completion: nil)
+        
+        
     }
 
 }
