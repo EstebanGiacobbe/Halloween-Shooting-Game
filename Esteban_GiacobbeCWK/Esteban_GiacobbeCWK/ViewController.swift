@@ -25,6 +25,8 @@ class ViewController: UIViewController, subviewDelegate {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    
     var score = 0
     
     let W = UIScreen.main.bounds.width
@@ -67,7 +69,8 @@ class ViewController: UIViewController, subviewDelegate {
         //birds.image = UIImage (named: "bird13.png")
         birds.frame = CGRect(x: self.W * 0.9, y: self.H * 0.02, width: 80, height: 80)
             
-        birdImage.append(birds)        //self.view.addSubview(birds)
+        birdImage.append(birds)
+        //self.view.addSubview(birds)
         //self.view.bringSubviewToFront(birds)
         
         let birds1 = UIImageView(image: nil)
@@ -104,6 +107,8 @@ class ViewController: UIViewController, subviewDelegate {
         //
         
     }
+
+    
 
     func aimLocation(dx:CGFloat, dy: CGFloat, center: CGPoint){
         
@@ -153,6 +158,8 @@ class ViewController: UIViewController, subviewDelegate {
         self.view.addSubview(background)
         self.view.sendSubviewToBack(background)
         
+        ballImageView.frame = CGRect(x: W * 0.04, y: H * 0.4, width: 60, height: 74)
+        
         
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         
@@ -169,6 +176,7 @@ class ViewController: UIViewController, subviewDelegate {
         
        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.finishGameTimer), userInfo: nil, repeats: true)
         
+    
         
     }
         

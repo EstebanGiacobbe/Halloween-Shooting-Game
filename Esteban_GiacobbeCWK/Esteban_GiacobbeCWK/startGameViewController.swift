@@ -9,7 +9,15 @@
 import UIKit
 
 class startGameViewController: UIViewController {
-
+    
+    let W = UIScreen.main.bounds.width
+    let H = UIScreen.main.bounds.height
+    
+    @IBOutlet weak var StartGame: UIButton!
+    
+    @IBOutlet weak var StartGame2: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +25,11 @@ class startGameViewController: UIViewController {
         background.frame = UIScreen.main.bounds
         self.view.addSubview(background)
         self.view.sendSubviewToBack(background)
+        
+        
+        StartGame.frame = CGRect(x: W * 0.35 , y: H * 0.08, width: 174, height: 170)
+        
+        StartGame2.frame = CGRect(x: W * 0.35 , y: H * 0.5, width: 174, height: 170)
     }
     
 

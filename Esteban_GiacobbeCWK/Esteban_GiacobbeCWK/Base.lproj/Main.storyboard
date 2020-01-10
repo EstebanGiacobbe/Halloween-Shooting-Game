@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hollowhead.png" translatesAutoresizingMaskIntoConstraints="NO" id="0pW-6c-7KX">
-                                <rect key="frame" x="-143" y="96" width="353" height="473"/>
+                                <rect key="frame" x="-143" y="20" width="354" height="549"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -115,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuX-C5-ySl">
-                                <rect key="frame" x="244" y="45" width="179" height="157"/>
+                                <rect key="frame" x="286" y="74" width="95" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Game" backgroundImage="startButtons.png"/>
                                 <connections>
@@ -123,7 +123,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xx9-Sk-Af7">
-                                <rect key="frame" x="248" y="127" width="171" height="163"/>
+                                <rect key="frame" x="282" y="191" width="103" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Level 2" backgroundImage="startButtons.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,6 +136,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Wfl-Qj-seu"/>
                     </view>
+                    <connections>
+                        <outlet property="StartGame" destination="VuX-C5-ySl" id="O61-D9-6c4"/>
+                        <outlet property="StartGame2" destination="Xx9-Sk-Af7" id="lVz-Bn-oDn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yay-V8-cfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,6 +207,6 @@
         <image name="startButtons.png" width="480" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dSf-lS-MZq"/>
+        <segue reference="CRf-TF-Pfh"/>
     </inferredMetricsTieBreakers>
 </document>
