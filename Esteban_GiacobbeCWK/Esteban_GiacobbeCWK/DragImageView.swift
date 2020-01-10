@@ -11,6 +11,7 @@ import UIKit
 class DragImageView: UIImageView {
 
     var myDelegate: subviewDelegate?
+    //var my2Delegate: subviewDelegate2?
     
     var startLocation: CGPoint?
     var currentLocation: CGPoint?
@@ -47,6 +48,7 @@ class DragImageView: UIImageView {
         self.center = newCenter
         
         self.myDelegate?.aimLocation(dx: dx * 10, dy: dy * 10, center: self.center)
+        //self.my2Delegate?.aimLocation(dx: dx * 10, dy: dy * 10, center: self.center)
 }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -54,6 +56,7 @@ class DragImageView: UIImageView {
         self.center = CGPoint(x: W * 0.05, y: H * 0.5)
         
         self.myDelegate?.createBall()
+        //self.my2Delegate?.createBall()
         
     }
     
