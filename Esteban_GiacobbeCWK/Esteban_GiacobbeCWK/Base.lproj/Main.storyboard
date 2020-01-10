@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hollowhead.png" translatesAutoresizingMaskIntoConstraints="NO" id="0pW-6c-7KX">
-                                <rect key="frame" x="-143" y="0.0" width="349" height="569"/>
+                                <rect key="frame" x="-143" y="96" width="353" height="473"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

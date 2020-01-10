@@ -8,23 +8,23 @@
 
 import UIKit
 
-//protocol subviewDelegate2{
-//    func createBall()
-//    func aimLocation(dx: CGFloat, dy: CGFloat, center: CGPoint)
+protocol subviewDelegate2{
+    func createBall()
+    func aimLocation(dx: CGFloat, dy: CGFloat, center: CGPoint)
     
     
-//}
+}
 
-//var angleC: CGFloat!
-//var angleD: CGFloat!
-//var PointRelease: CGPoint!
+    //var angleC: CGFloat!
+    //var angleD: CGFloat!
+    //var PointRelease: CGPoint!
 
 //var angleX: CGFloat!
 //var angleY: CGFloat!
 //var pointRelease: CGPoint!
 
 
-class secondLevelViewController: UIViewController, subviewDelegate{
+class secondLevelViewController: UIViewController, subviewDelegate2{
     
     
     
@@ -142,6 +142,8 @@ class secondLevelViewController: UIViewController, subviewDelegate{
         dynamicAnimator.addBehavior(boundaryCollisionBehavior)
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
+        
+        
     }
     
     
@@ -152,20 +154,20 @@ class secondLevelViewController: UIViewController, subviewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var background = UIImageView(image: UIImage(named: "2_game.png"))
+        let background = UIImageView(image: UIImage(named: "2_game.png"))
          background.frame = UIScreen.main.bounds
          self.view.addSubview(background)
          self.view.sendSubviewToBack(background)
          
          
          dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
-         
+        
          score = 0
          scoreLabel.text = String(score)
          
          birds()
          
-        ballImageView.myDelegate = self
+         ballImageView.mySecondDelegate = self
 
          collision()
          

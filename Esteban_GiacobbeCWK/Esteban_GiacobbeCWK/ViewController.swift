@@ -136,7 +136,10 @@ class ViewController: UIViewController, subviewDelegate {
         dynamicAnimator.addBehavior(boundaryCollisionBehavior)
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
+        
+        
     }
+    
 
     @IBOutlet weak var ballImageView: DragImageView!
     

@@ -11,7 +11,7 @@ import UIKit
 class DragImageView: UIImageView {
 
     var myDelegate: subviewDelegate?
-    //var my2Delegate: subviewDelegate2?
+    var mySecondDelegate: subviewDelegate2?
     
     var startLocation: CGPoint?
     var currentLocation: CGPoint?
