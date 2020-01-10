@@ -13,6 +13,10 @@
 		281A4D9723C7E050000F6382 /* 2_game.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4D9623C7E050000F6382 /* 2_game.png */; };
 		281A4D9923C7E206000F6382 /* aim.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4D9823C7E206000F6382 /* aim.png */; };
 		281A4D9B23C7F65B000F6382 /* startButtons.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4D9A23C7F65B000F6382 /* startButtons.png */; };
+		281A4D9D23C7F93C000F6382 /* hollowhead.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4D9C23C7F93B000F6382 /* hollowhead.png */; };
+		281A4D9F23C7FAC6000F6382 /* end.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4D9E23C7FAC6000F6382 /* end.png */; };
+		281A4DA123C7FCD4000F6382 /* end1.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4DA023C7FCD3000F6382 /* end1.png */; };
+		281A4DA323C7FD1A000F6382 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4DA223C7FD1A000F6382 /* 9.png */; };
 		2856B7C223C53688007C1C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B7C123C53688007C1C95 /* AppDelegate.swift */; };
 		2856B7C423C53688007C1C95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B7C323C53688007C1C95 /* SceneDelegate.swift */; };
 		2856B7C623C53688007C1C95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B7C523C53688007C1C95 /* ViewController.swift */; };
@@ -50,6 +54,10 @@
 		281A4D9623C7E050000F6382 /* 2_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_game.png; sourceTree = "<group>"; };
 		281A4D9823C7E206000F6382 /* aim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aim.png; sourceTree = "<group>"; };
 		281A4D9A23C7F65B000F6382 /* startButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButtons.png; sourceTree = "<group>"; };
+		281A4D9C23C7F93B000F6382 /* hollowhead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hollowhead.png; sourceTree = "<group>"; };
+		281A4D9E23C7FAC6000F6382 /* end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = end.png; sourceTree = "<group>"; };
+		281A4DA023C7FCD3000F6382 /* end1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = end1.png; sourceTree = "<group>"; };
+		281A4DA223C7FD1A000F6382 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		2856B7BE23C53688007C1C95 /* Esteban_GiacobbeCWK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Esteban_GiacobbeCWK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2856B7C123C53688007C1C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2856B7C323C53688007C1C95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,8 +133,12 @@
 				281A4D9423C7DC85000F6382 /* secondLevelViewController.swift */,
 				281A4D9623C7E050000F6382 /* 2_game.png */,
 				28E46CA623C76AA80008842E /* endViewController.swift */,
+				281A4DA023C7FCD3000F6382 /* end1.png */,
 				2856B7F123C5411E007C1C95 /* DragImageView.swift */,
 				2856B7C723C53688007C1C95 /* Main.storyboard */,
+				281A4DA223C7FD1A000F6382 /* 9.png */,
+				281A4D9E23C7FAC6000F6382 /* end.png */,
+				281A4D9C23C7F93B000F6382 /* hollowhead.png */,
 				281A4D9A23C7F65B000F6382 /* startButtons.png */,
 				28E46CB223C77C020008842E /* PumpkinPNG.png */,
 				2856B7CA23C53689007C1C95 /* Assets.xcassets */,
@@ -265,7 +277,11 @@
 				281A4D9723C7E050000F6382 /* 2_game.png in Resources */,
 				281A4D9323C7DB86000F6382 /* startBackground.png in Resources */,
 				281A4D9B23C7F65B000F6382 /* startButtons.png in Resources */,
+				281A4D9D23C7F93C000F6382 /* hollowhead.png in Resources */,
+				281A4D9F23C7FAC6000F6382 /* end.png in Resources */,
 				28E46CB323C77C020008842E /* PumpkinPNG.png in Resources */,
+				281A4DA323C7FD1A000F6382 /* 9.png in Resources */,
+				281A4DA123C7FCD4000F6382 /* end1.png in Resources */,
 				2856B7C923C53688007C1C95 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

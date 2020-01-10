@@ -12,7 +12,11 @@ class endViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var background = UIImageView(image: UIImage(named: "end1.png"))
+        background.frame = UIScreen.main.bounds
+        self.view.addSubview(background)
+        self.view.sendSubviewToBack(background)
         
     }
     
