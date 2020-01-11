@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		281A4D9123C7DAE0000F6382 /* startGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A4D9023C7DAE0000F6382 /* startGameViewController.swift */; };
-		281A4D9523C7DC85000F6382 /* secondLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A4D9423C7DC85000F6382 /* secondLevelViewController.swift */; };
 		281A4D9923C7E206000F6382 /* aim.png in Resources */ = {isa = PBXBuildFile; fileRef = 281A4D9823C7E206000F6382 /* aim.png */; };
 		2849438423CA364500BB8E5E /* explosion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2849438323CA364500BB8E5E /* explosion.jpg */; };
 		2856B7C223C53688007C1C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B7C123C53688007C1C95 /* AppDelegate.swift */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		281A4D9023C7DAE0000F6382 /* startGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startGameViewController.swift; sourceTree = "<group>"; };
-		281A4D9423C7DC85000F6382 /* secondLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondLevelViewController.swift; sourceTree = "<group>"; };
 		281A4D9823C7E206000F6382 /* aim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aim.png; sourceTree = "<group>"; };
 		2849438323CA364500BB8E5E /* explosion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = explosion.jpg; sourceTree = "<group>"; };
 		2856B7BE23C53688007C1C95 /* Esteban_GiacobbeCWK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Esteban_GiacobbeCWK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +114,6 @@
 				281A4D9023C7DAE0000F6382 /* startGameViewController.swift */,
 				2856B7C523C53688007C1C95 /* ViewController.swift */,
 				2849438323CA364500BB8E5E /* explosion.jpg */,
-				281A4D9423C7DC85000F6382 /* secondLevelViewController.swift */,
 				28E46CA623C76AA80008842E /* endViewController.swift */,
 				2856B7F123C5411E007C1C95 /* DragImageView.swift */,
 				2856B7C723C53688007C1C95 /* Main.storyboard */,
@@ -283,7 +280,6 @@
 				281A4D9123C7DAE0000F6382 /* startGameViewController.swift in Sources */,
 				2856B7C223C53688007C1C95 /* AppDelegate.swift in Sources */,
 				2856B7F223C5411E007C1C95 /* DragImageView.swift in Sources */,
-				281A4D9523C7DC85000F6382 /* secondLevelViewController.swift in Sources */,
 				28E46CA723C76AA80008842E /* endViewController.swift in Sources */,
 				2856B7C423C53688007C1C95 /* SceneDelegate.swift in Sources */,
 			);

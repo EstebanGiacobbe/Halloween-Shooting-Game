@@ -95,6 +95,8 @@ class ViewController: UIViewController, subviewDelegate {
   
     }
     
+    
+    
 
     func aimLocation(dx:CGFloat, dy: CGFloat, center: CGPoint){
         
@@ -128,9 +130,7 @@ class ViewController: UIViewController, subviewDelegate {
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
         //dynamicAnimator.addBehavior(objCollisionBehavior)
-        
-        
-        
+   
     }
     
 
@@ -156,8 +156,6 @@ class ViewController: UIViewController, subviewDelegate {
         
         birds()
         
-    
-        
         ballImageView.myDelegate = self
 
         collision()
@@ -166,22 +164,8 @@ class ViewController: UIViewController, subviewDelegate {
         
        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.finishGameTimer), userInfo: nil, repeats: true)
         
-        objAnimation()
+    
         
-    }
-    
-    func objAnimation(){
-
-    
-        UIView.animate(withDuration: 2.9, delay: 0, options: [.repeat, .autoreverse],
-                              animations:  {[weak self] in
-                               self?.obje.frame.size.height *= 1.15
-                               self?.obje.frame.size.width *= 1.15
-                              
-                               
-               }, completion: nil)
-
-
     }
         
         
@@ -246,7 +230,10 @@ class ViewController: UIViewController, subviewDelegate {
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! endViewController
         
+        vc.scoreInfo = scoreLabel.text
+        
         self.present(vc, animated: false, completion: nil)
+        
         
         
     }

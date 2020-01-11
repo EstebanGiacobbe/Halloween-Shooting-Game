@@ -9,7 +9,20 @@
 import UIKit
 
 class endViewController: UIViewController {
-
+    
+    
+    let W = UIScreen.main.bounds.width
+    let H = UIScreen.main.bounds.height
+    
+    @IBOutlet weak var scoreInformation: UILabel!
+    
+    var scoreInfo: String!
+    
+    
+    @IBOutlet weak var restartButton: UIButton!
+    
+    @IBOutlet weak var homeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +31,11 @@ class endViewController: UIViewController {
         self.view.addSubview(background)
         self.view.sendSubviewToBack(background)
         
-    }
+        scoreInformation.text = scoreInfo
+        
+         restartButton.frame = CGRect(x: W * 0.2 , y: H * 0.3, width: 174, height: 170)
+        
+         homeButton.frame = CGRect(x: W * 0.5 , y: H * 0.3, width: 174, height: 170)    }
     
 
     
