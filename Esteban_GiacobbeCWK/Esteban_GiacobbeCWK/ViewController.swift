@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol subviewDelegate{
     func createBall()
@@ -22,6 +23,7 @@ var pointRelease: CGPoint!
 
 class ViewController: UIViewController, subviewDelegate {
     
+    var musicEffect: AVAudioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -154,6 +156,8 @@ class ViewController: UIViewController, subviewDelegate {
         score = 0
         scoreLabel.text = String(score)
         
+        impEff()
+        
         birds()
         
         ballImageView.myDelegate = self
@@ -193,6 +197,7 @@ class ViewController: UIViewController, subviewDelegate {
                 for bird in self.birdrepeat {
                     if createBall.frame.intersects(bird.frame){
                         
+                        self.musicEffect.play()
                         
                         let index = self.birdrepeat.firstIndex(of: bird)
                         self.birdrepeat.remove(at: index!)
@@ -209,6 +214,22 @@ class ViewController: UIViewController, subviewDelegate {
                     }
                 }
            }
+        }
+    }
+    
+    func impEff() {
+        
+        let musicFile = Bundle.main.path(forResource: "impact", ofType: ".mp3")
+        
+        do {
+            
+            try self.musicEffect = AVAudioPlayer(contentsOf: URL (fileURLWithPath: musicFile!))
+            
+        }
+        catch {
+            
+            print(error)
+            
         }
     }
     
