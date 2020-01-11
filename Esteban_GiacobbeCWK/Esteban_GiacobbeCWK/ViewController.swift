@@ -35,6 +35,7 @@ class ViewController: UIViewController, subviewDelegate {
     var ballArray:[UIImageView] = []
     var birdImage:[UIImageView] = []
     var birdrepeat:[UIImageView] = []
+ 
     
     var gameTime = 20
     var gameTimer = Timer()
@@ -45,15 +46,15 @@ class ViewController: UIViewController, subviewDelegate {
     var dynamicItemBehavior: UIDynamicItemBehavior!
     var boundaryCollisionBehavior: UICollisionBehavior!
     var birdsCollisionBehavior: UICollisionBehavior!
+  
     
+    @IBOutlet weak var obje: UIImageView!
     
     func birds() {
         
         let birdsImages = ["Golem.png","Golem1.png","Golem3.png","Golem4.png"]
         
-        
-        
-            
+   
         Timer.scheduledTimer(withTimeInterval: 1, repeats:true){ timer in
             
         let index = Int.random(in: 0 ... 3)
@@ -66,12 +67,9 @@ class ViewController: UIViewController, subviewDelegate {
 
         let birds = UIImageView(image: nil)
         birds.image = UIImage (named: birdsImages.randomElement()!)
-        //birds.image = UIImage (named: "bird13.png")
         birds.frame = CGRect(x: self.W * 0.9, y: self.H * 0.02, width: 80, height: 80)
             
         birdImage.append(birds)
-        //self.view.addSubview(birds)
-        //self.view.bringSubviewToFront(birds)
         
         let birds1 = UIImageView(image: nil)
         birds1.image = UIImage (named: birdsImages.randomElement()!)
@@ -89,25 +87,13 @@ class ViewController: UIViewController, subviewDelegate {
         
         
         
-       birdImage.append(birds1)
-        //self.view.addSubview(birds1)
-        //self.view.bringSubviewToFront(birds1)
-        
+        birdImage.append(birds1)
         birdImage.append(birds2)
-        //self.view.addSubview(birds2)
-        //self.view.bringSubviewToFront(birds2)
-        
         birdImage.append(birds3)
-        //self.view.addSubview(birds3)
-        //self.view.bringSubviewToFront(birds3)
-        
-        
         birdsCollisionBehavior = UICollisionBehavior(items: birdImage)
         
-        //
-        
+  
     }
-
     
 
     func aimLocation(dx:CGFloat, dy: CGFloat, center: CGPoint){
@@ -134,13 +120,15 @@ class ViewController: UIViewController, subviewDelegate {
         dynamicItemBehavior = UIDynamicItemBehavior(items: ballArray)
         dynamicAnimator.addBehavior(dynamicItemBehavior)
         
-        //dynamicItemBehavior.addItem(createBall)
+        
         self.dynamicItemBehavior.addLinearVelocity(CGPoint(x: angleX, y: angleY), for: createBall)
         
         boundaryCollisionBehavior.addItem(createBall)
         dynamicAnimator.addBehavior(boundaryCollisionBehavior)
         
         dynamicAnimator.addBehavior(birdsCollisionBehavior)
+        //dynamicAnimator.addBehavior(objCollisionBehavior)
+        
         
         
     }
@@ -168,6 +156,8 @@ class ViewController: UIViewController, subviewDelegate {
         
         birds()
         
+    
+        
         ballImageView.myDelegate = self
 
         collision()
@@ -176,9 +166,26 @@ class ViewController: UIViewController, subviewDelegate {
         
        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.finishGameTimer), userInfo: nil, repeats: true)
         
-    
+        objAnimation()
         
     }
+    
+    func objAnimation(){
+
+    
+        UIView.animate(withDuration: 2.9, delay: 0, options: [.repeat, .autoreverse],
+                              animations:  {[weak self] in
+                               self?.obje.frame.size.height *= 1.15
+                               self?.obje.frame.size.width *= 1.15
+                              
+                               
+               }, completion: nil)
+
+
+    }
+        
+        
+    
         
         func collision() {
         
@@ -189,14 +196,19 @@ class ViewController: UIViewController, subviewDelegate {
         boundaryCollisionBehavior.addBoundary(withIdentifier: "Left_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 0.0), to: CGPoint (x: self.W * 0.0, y: self.H * 1.0))
         
         boundaryCollisionBehavior.addBoundary(withIdentifier: "Bottom_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 1.0), to: CGPoint (x: self.W * 1.0, y: self.H * 1.0))
+            
+        boundaryCollisionBehavior.addBoundary(withIdentifier: "object" as NSCopying, for: UIBezierPath(rect: obje.frame))
+            
+       
+            
         
         birdsCollisionBehavior = UICollisionBehavior(items:[])
-        
-        //bird collision
+
         birdsCollisionBehavior.action = {
             for createBall in self.ballArray{
                 for bird in self.birdrepeat {
                     if createBall.frame.intersects(bird.frame){
+                        
                         
                         let index = self.birdrepeat.firstIndex(of: bird)
                         self.birdrepeat.remove(at: index!)
