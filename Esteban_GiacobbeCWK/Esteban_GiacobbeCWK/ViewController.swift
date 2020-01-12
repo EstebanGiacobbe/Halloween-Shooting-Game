@@ -29,6 +29,8 @@ class ViewController: UIViewController, subviewDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     
     
+    @IBOutlet weak var Hollow: UIImageView!
+    
     var score = 0
     
     let W = UIScreen.main.bounds.width
@@ -168,7 +170,8 @@ class ViewController: UIViewController, subviewDelegate {
         
        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.finishGameTimer), userInfo: nil, repeats: true)
         
-    
+        
+        Hollow.frame = CGRect(x: W * -0.05 , y: H * 0.5, width: 203, height: 167)
         
     }
         
@@ -186,8 +189,6 @@ class ViewController: UIViewController, subviewDelegate {
         boundaryCollisionBehavior.addBoundary(withIdentifier: "Bottom_Boundary" as NSCopying, from: CGPoint(x: self.W * 0.0, y: self.H * 1.0), to: CGPoint (x: self.W * 1.0, y: self.H * 1.0))
             
         boundaryCollisionBehavior.addBoundary(withIdentifier: "object" as NSCopying, for: UIBezierPath(rect: obje.frame))
-            
-       
             
         
         birdsCollisionBehavior = UICollisionBehavior(items:[])
