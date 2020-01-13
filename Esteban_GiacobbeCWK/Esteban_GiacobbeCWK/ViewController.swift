@@ -24,6 +24,7 @@ var pointRelease: CGPoint!
 class ViewController: UIViewController, subviewDelegate {
     
     var musicEffect: AVAudioPlayer = AVAudioPlayer()
+    var horroMusic :  AVAudioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -159,6 +160,8 @@ class ViewController: UIViewController, subviewDelegate {
         scoreLabel.text = String(score)
         
         impEff()
+        horrorEff()
+        
         
         birds()
         
@@ -233,6 +236,22 @@ class ViewController: UIViewController, subviewDelegate {
             
         }
     }
+    
+    func horrorEff(){
+        
+        let horrorFile = Bundle.main.path(forResource: "horror", ofType: ".mp3")
+        
+        do {
+            
+            try self.horroMusic = AVAudioPlayer(contentsOf: URL (fileURLWithPath: horrorFile!))
+            self.horroMusic.play()
+        }
+        catch {
+            print(error)
+        }
+        
+    }
+    
     
     @objc func finishGameTimer(){
         
